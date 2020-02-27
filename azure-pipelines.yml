@@ -33,8 +33,7 @@ steps:
     inputs:
       targets: 'package-solution'
       arguments: '--ship'
-       
-       
+
   - task: CopyFiles@2
     displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
     inputs:
