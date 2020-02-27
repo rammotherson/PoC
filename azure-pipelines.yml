@@ -26,12 +26,4 @@ steps:
   - task: Gulp@1
     displayName: 'Gulp Build'
     inputs:
-      targets: build 
-      
-   - task: Gulp@0
-     displayName: 'Bundle project'
-     inputs:
-      targets: bundle
-      arguments: '--ship'
-
-   
+      targets: build
