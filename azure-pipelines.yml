@@ -7,13 +7,46 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'vs2017-win2016'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - checkout: self
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - task: NodeTool@0
+    displayName: 'Use Node 10.x'
+    inputs:
+      versionSpec: 10.x
+      checkLatest: true
+
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      verbose: false
+      
+  - task: Gulp@1
+    displayName: 'Gulp Build'
+    inputs:
+      targets: build 
+      
+   - task: Gulp@0
+     displayName: 'Bundle project'
+     inputs:
+      targets: bundle
+      arguments: '--ship'
+
+   - task: Gulp@0
+     displayName: 'gulp package-solution'
+     inputs:
+       targets: 'package-solution'
+       arguments: '--ship'
+       
+       
+   - task: CopyFiles@2
+     displayName: 'Copy Files to: $(build.artifactstagingdirectory)/drop'
+     inputs:
+       Contents: '**\*.sppkg'
+       TargetFolder: '$(build.artifactstagingdirectory)/drop'
+
+
+   - task: PublishBuildArtifacts@1
+     displayName: 'Publish Artifact: drop'
