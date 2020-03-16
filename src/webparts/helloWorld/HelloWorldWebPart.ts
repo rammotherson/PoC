@@ -23,7 +23,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorl
         <div class="${ styles.column }">
           <span class="${ styles.title }">Welcome to SharePoint from Ram !! !!!! </span>
   <p class="${ styles.subTitle }">Customize Webpart deployed using DevOps Pipeline...!!!</p>
-    <p class="${ styles.description }">${escape(this.properties.description)}</p>
+    <p class="${ styles.description }">Click</p>
       <a href="https://aka.ms/spfx" class="${ styles.button }">
         <span class="${ styles.label }">Learn more</span>
           </a>
