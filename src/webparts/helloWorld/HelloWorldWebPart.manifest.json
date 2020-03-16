@@ -21,7 +21,7 @@
     "description": { "default": "HelloWorld description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "HelloWorld"
+      "description": "HelloWorld1"
     }
   }]
 }
