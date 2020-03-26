@@ -12,3 +12,15 @@ describe("Demo_TestCase2", () => {  test(" Sub two numbers ", () => { const resu
 }
 
 );
+describe("Demo_TestCase2", () => {  test(" Mul two numbers ", () => { const result = 2 * 3;
+  expect(result).toBe(6); 
+});
+}
+
+);
+describe("Demo_TestCase2", () => {  test(" Divide two numbers ", () => { const result = 4 / 2;
+  expect(result).toBe(2); 
+});
+}
+
+);
