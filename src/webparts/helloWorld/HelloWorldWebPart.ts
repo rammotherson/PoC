@@ -28,7 +28,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart <IHelloWorl
         <span class="${ styles.label }">Learn more</span>
           </a>
           </div>
-          </div>
+          </div> 
           </div>
           </div>`;
   }
